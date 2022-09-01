@@ -1,0 +1,23 @@
+---
+logger:
+    level: 3 # 1.DEBUG 2.WARN 3.INFO 4.ERROR 5.FATAL
+    file: "/app.log" #暂时无效
+
+Listener:
+    socks5: #本地socks5服务端配置信息
+        version: 5
+        ListenIP: 0.0.0.0 #默认为0.0.0.0
+        ListenPort: 801
+        user: admin #暂时无鉴权
+        passwd : adm1n
+    bridge: #与腾讯云函数通讯的”网桥“配置信息
+        IP: 127.0.0.1 #vps公网ip，为空则通过 ip.sb 自动获取
+        Port: 802  #暴露的port 一般与ListenPort相同
+        ListenIP: #默认为0.0.0.0
+        ListenPort: 802
+
+SCFList:
+        - http://127.0.0.1:9000
+
+
+
